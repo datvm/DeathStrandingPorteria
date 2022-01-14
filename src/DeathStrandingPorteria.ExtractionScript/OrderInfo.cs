@@ -20,7 +20,7 @@ public class OrderInfo
     public int MaxLikePremium { get; set; }
 
     public int WeightX10 { get; set; }
-    public IEnumerable< KeyValuePair<CargoSize, int>> Sizes { get; set; }
+    public Dictionary<string, int> Sizes { get; set; }
 }
 
 public enum CargoSize

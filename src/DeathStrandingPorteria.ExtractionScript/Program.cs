@@ -152,9 +152,9 @@ static List<int> ParseTags(string raw, Dictionary<string, OrderTag> tagDict)
     return result;
 }
 
-static List<KeyValuePair<CargoSize, int>> ParseSizes(string raw)
+static Dictionary<string, int> ParseSizes(string raw)
 {
-    var result = new List<KeyValuePair<CargoSize, int>>();
+    var result = new Dictionary<string, int>();
 
     var lines = raw.Split('\n');
     foreach (var line in lines)
@@ -167,7 +167,7 @@ static List<KeyValuePair<CargoSize, int>> ParseSizes(string raw)
         var size = Enum.Parse<CargoSize>(sizeRaw);
         var count = int.Parse(parts[1].Trim());
 
-        result.Add(new(size, count));
+        result[((int)size).ToString()] = count;
     }
 
     return result;

@@ -1,0 +1,13 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "strict": true,
+        "sourceMap": true,
+        "target": "ESNext",
+        "module": "ESNext",
+        "removeComments": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
