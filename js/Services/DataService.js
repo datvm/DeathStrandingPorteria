@@ -2,7 +2,7 @@ class DataService {
     orderList;
     dataDicts;
     async initAsync() {
-        const data = await fetch("/DSOrders.json")
+        const data = await fetch("./DSOrders.json")
             .then(r => r.json());
         this.orderList = data.orders;
         this.dataDicts = {
