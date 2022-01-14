@@ -4,7 +4,7 @@ class DataService {
     dataDicts?: IOrderDataRefined;
 
     async initAsync() {
-        const data: IOrderData = await fetch("/DSOrders.json")
+        const data: IOrderData = await fetch("./DSOrders.json")
             .then(r => r.json());
 
         this.orderList = data.orders;
