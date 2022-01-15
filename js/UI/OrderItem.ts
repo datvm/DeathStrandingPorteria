@@ -19,12 +19,16 @@ export class OrderItem {
         el.setChildContent(".order-no", item.id.toString());
         el.setChildContent(".order-name", item.name);
 
+        const tagDict = dsData.dataDicts!.tags;
+        const tags = (item.tags || []).map(q => tagDict[q.toString()].name);
+        el.setChildContent(".order-tags", tags.join(" - "));
+
         const imgCompletion = el.querySelector(".order-completion")!;
         imgCompletion.setAttribute("src", dsData.getCompletionImageUrl(item.completionStatus));
         imgCompletion.setAttribute("title", dsData.getCompletionText(item.completionStatus));
 
-        const locDict = dsData.dataDicts?.locations;
-        if (!locDict) { throw new Error("Data unavailable"); }
+        const locDict = dsData.dataDicts!.locations;
+        
 
         el.setChildContent(".order-from", locDict[item.startLocationId].name);
         el.setChildContent(".order-to", locDict[item.destLocationId].name);
