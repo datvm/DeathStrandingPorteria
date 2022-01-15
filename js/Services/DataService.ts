@@ -53,7 +53,7 @@ class DataService {
 
     getCompletionText(i: number) {
         return i == 0 ? "New" :
-            i == 1 ? "Normal" : `Premium ${i - 1}`;
+            i == 1 ? "Standard" : `Premium ${i - 1}`;
     }
 
 }
