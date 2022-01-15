@@ -29,27 +29,17 @@ declare global {
         maxLikePremium: number;
         weightX10: number;
         sizes: ObjDict<number>;
+
+        completionStatus: number;
     }
 
-    enum CargoSize {
-        S = 1,
-        M = 2,
-        L = 4,
-        XL = 6
-    }
 
     interface IOrderRequirement {
-        reqType: OrderRequirementType;
+        reqType: number;
         valueX10: number;
         unit?: string;
     }
 
-    enum OrderRequirementType {
-        TimeLimit = 0,
-        Quantity = 1,
-        MinWeight = 2,
-        Condition = 3
-    }
 
     interface INamedEntity {
         id: number;
@@ -61,6 +51,12 @@ declare global {
     interface IOrderCategory extends INamedEntity { }
 
     interface IOrderTag extends INamedEntity { }
+
+    interface IOrderFilter {
+        locType: number;
+        locId?: number;
+        completions: ObjDict<boolean>;
+    }
 
 }
 

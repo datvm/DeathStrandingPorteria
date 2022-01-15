@@ -2,5 +2,6 @@
   "port": 27542,
   "path": "./",
   "clr": "v4.0",
-  "protocol": "http"
+  "protocol": "http",
+  "url": "./DeathStrandingPorteria"
 }

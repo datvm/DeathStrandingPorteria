@@ -19,7 +19,11 @@ body {
     z-index: 100;
 }
 
-order-page {
+order-page, order-filter {
     display: block;
     position: relative;
+}
+
+.h-1 {
+    height: 1em;
 }
